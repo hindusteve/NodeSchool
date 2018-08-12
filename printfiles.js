@@ -1,4 +1,5 @@
 var path = require('path')
+var fs = require('fs')
 
 module.exports = function (folder, fileExtension, callback) {
 
@@ -11,12 +12,13 @@ module.exports = function (folder, fileExtension, callback) {
 		if(err)
 			return(callback(err));
 
-		files.foreach(function(file){
-			if(('.' + path.extname(file)) === fileExtension) {
+		files.forEach(function(file){
+			if((path.extname(file)) === fileExtension) {
 				// code to add current 'file' to filteredFiles
 				filteredFiles.push(file);
 			}
 		})
+
 		return(callback(null, filteredFiles));
 	})
 }

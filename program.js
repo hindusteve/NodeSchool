@@ -154,12 +154,12 @@ You must not print directly to the console from your module file, only
 
 
   */
-var fs = require('fs')
+//var fs = require('fs')
 //var path = require('path')
 
 var directoryName = process.argv[2]
 var ext = '.' + process.argv[3]
-var mymodule = require('./printfiles.js')
+var myModule = require('./printfiles.js')
 
 // function printFiles() {
 // 	fs.readdir(directoryName, function filterFiles(err, files) {
