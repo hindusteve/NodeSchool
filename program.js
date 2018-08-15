@@ -158,26 +158,19 @@ You must not print directly to the console from your module file, only
 //var path = require('path')
 
 var directoryName = process.argv[2]
-var ext = '.' + process.argv[3]
+var ext = process.argv[3]
 var myModule = require('./printfiles.js')
-
-// function printFiles() {
-// 	fs.readdir(directoryName, function filterFiles(err, files) {
-
-// 		files.foreach(function(file) {
-// 			if (path.extname(file) === ext) {
-// 				console.log(file);
-// 			}
-// 		}
-// 	});
-// }
 
 function fileList(err, data) {
 	if(err)
 		console.log("The program encountered error " + err);
 
-	console.log(data);
+	data.forEach(function(file){
+		console.log(file);
+	});
 }
 
 
-myModule(directoryName, ext, fileList); // is this the right way to kick everything off?
+myModule(directoryName, ext, fileList); 
+
+
