@@ -213,11 +213,10 @@ myModule(directoryName, ext, fileList);
   which you have to explicitly convert to Strings.
   */
 
-require('http');
+var http = require('http');
 
 var targetUrl = process.argv[2];
 
-console.log(targetUrl);
 http.get(targetUrl, function(response) {
 	response.on('data', function(data) {
 		console.log(data);
@@ -234,7 +233,3 @@ http.get(targetUrl, function(response) {
   	response.on("data", function(data){
 
   	});*/
-
-
-  }
-
